@@ -1,0 +1,35 @@
+<div  class="gallery portfolio">
+	<div class="gallery__info">
+		<h2 data-ng-hide="!portfolio.games.length" class="gallery__info-sec">{{ portfolio.games.length }} Portfolio Games</h2>
+	</div>
+    <section data-ng-hide="!portfolio.games.length" class="gallery__search">
+		<input class="search__input" type="text" data-ng-model="portfolio.search" placeholder="Search by 'name'" />
+	</section>
+	<section class="gallery__list">
+		<article data-ng-show="!portfolio.games.length" class="no-items">
+			Oooops!!! Seems you still haven't add games to your portfolio.<br />
+			<button type="button" data-ng-click="portfolio.showGallery()">Back To Gallery</button>
+		</article>
+		<article data-ng-hide="!portfolio.games.length" class="gallery__item portfolio" data-ng-repeat="game in portfolio.games | filter:{ name: portfolio.search }">
+			<ul class="portfolio__item--mask">
+		        <li data-ng-click="portfolio.removeGame(game)">Remove</li>
+		        <li data-ng-click="portfolio.showDetails(game)">Details</li>
+		    </ul>
+			<img class="gallery__item--title-icon gallery__item--circle" data-ng-src="{{game.images['60x60']}}">
+			<h3 class="gallery__item--title">{{game.name}}</h3>
+			<img data-ng-src="{{game.images['screenshot']}}">
+			<!-- <em>Lorem Ipsum Description</em> -->
+			<p class="gallery__item--action gallery__item--action--right">
+				<a  data-ng-click="portfolio.showDetails(game)" href="javascript:void(0)">
+					Details
+				</a>
+			</p>
+			<p class="gallery__item--action gallery__item--action--left">
+				<a data-ng-click="portfolio.removeGame(game)" href="javascript:void(0)">
+					Remove
+				</a>
+			</p>
+		</article>
+	</section>
+</div>
+    
