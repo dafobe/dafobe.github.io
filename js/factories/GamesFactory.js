@@ -84,12 +84,14 @@ angular.module('GamePortfolioApp')
 			return deferred.promise;
 		},
 		getGames : function(){
+			console.log('--- retrieving games : ', _games);
 			return _games;
 		},
 		addGame : function(game /*Object game entity*/){
 			var entry = new gameEntry(game.id, game.name, game.url);
 			entry.setup();
 			_games.push(entry);
+			console.log('--- added game : ',entry);
 		},
 		removeGame : function(game /*Object*/){
 			remove(game);

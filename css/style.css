@@ -488,7 +488,6 @@ a:link{
 	
     font-family: 'GOGOIA-Deco','FabfeltScript', sans-serif;
     font-size: 150%;
-    padding: 0 0 0 15px;
     flex: 1 1 0%;
 }
 .game__main__details > span{
@@ -509,7 +508,7 @@ a:link{
     display: block;
 	
     height: 40px;
-    padding: 6px 0 15px 0;
+    padding: 20px 0;
     border-bottom: solid 1px;
     font-family: GOGOIA-Deco, FabfeltScript, sans-serif;
     font-size: 200%;
